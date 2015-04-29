@@ -15,6 +15,12 @@ namespace one_to_one2
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
+            modelBuilder.Entity<Student>()
+                .HasOptional<StudentAddress>(s => s.StudentAddress)
+                .WithOptionalDependent(a => a.Student) /* dependent object adalah object dimana foreign key di letakkan */
+                .Map(m => m.MapKey("StudentAddressId"));
+
+            
         }
 
     }
