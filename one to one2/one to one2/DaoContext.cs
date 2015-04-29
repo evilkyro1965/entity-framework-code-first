@@ -15,9 +15,6 @@ namespace one_to_one2
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<Student>()
-                .HasOptional(s => s.StudentAddress)
-                .WithRequired(address => address.Student);
         }
 
     }
