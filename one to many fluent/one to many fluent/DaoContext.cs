@@ -18,6 +18,7 @@ namespace one_to_many_fluent
                 .HasMany<Student>(s => s.Students)
                 .WithRequired(s => s.Standard)
                 .HasForeignKey(s => s.StandardRefId);
+
         }
 
     }
