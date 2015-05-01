@@ -3,12 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NUnit.Framework;
+using mysql;
 
-namespace mysql
+namespace test
 {
-    class Program
+    [TestFixture]
+    public class Test1
     {
-        static void Main(string[] args)
+        [Test]
+        public void test1()
         {
             var context = new DaoContext();
 
@@ -17,8 +21,7 @@ namespace mysql
             user.password = "drowssap";
             context.Users.Add(user);
             context.SaveChanges();
-
-            Console.ReadKey();
         }
+
     }
 }
